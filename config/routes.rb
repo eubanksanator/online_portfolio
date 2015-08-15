@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :portfolios
   resources :work_experiences
   get 'static_pages/home'
 
