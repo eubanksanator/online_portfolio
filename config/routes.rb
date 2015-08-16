@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :portfolios
   resources :work_experiences
 
-  root 'static_pages#home'
+  root to: "static_pages#home"
 
   get 'static_pages/home'
 

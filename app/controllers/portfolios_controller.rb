@@ -1,6 +1,9 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy]
+
+
   # GET /portfolios
   # GET /portfolios.json
   def index

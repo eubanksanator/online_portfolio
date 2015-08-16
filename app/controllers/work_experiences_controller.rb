@@ -1,6 +1,8 @@
 class WorkExperiencesController < ApplicationController
   before_action :set_work_experience, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy]
+
   # GET /work_experiences
   # GET /work_experiences.json
   def index
