@@ -1,29 +1,19 @@
+
+
 <p id="notice"><%= notice %></p>
+<ul>
+  <li><strong>Name:</strong> <%= @work_experience.name %></li>
+  <li><strong>Start Date:</strong> <%= @work_experience.start_date %> -
+    <% if @work_experience.current_job? %>
+    Present
+    <% else %>
+    <%= @work_experience.end_date %>
+  <% end %>
+  </li>
+  <li><strong>Job title:</strong> <%= @work_experience.job_title %></li>
+  <li><strong>Description:</strong> <%= @work_experience.description %></li>
+</ul>
 
-<p>
-  <strong>Name:</strong>
-  <%= @work_experience.name %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @work_experience.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @work_experience.end_date %>
-</p>
-
-<p>
-  <strong>Job title:</strong>
-  <%= @work_experience.job_title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @work_experience.description %>
-</p>
 
 <%= link_to 'Edit', edit_work_experience_path(@work_experience) %> |
 <%= link_to 'Back', work_experiences_path %>
