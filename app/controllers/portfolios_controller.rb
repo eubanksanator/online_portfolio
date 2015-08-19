@@ -7,7 +7,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios
   # GET /portfolios.json
   def index
-    @portfolios = Portfolio.all
+    @portfolios = Portfolio.all.order('created_at ASC')
   end
 
   # GET /portfolios/1

@@ -5,7 +5,7 @@
 
 <% @portfolios.each do |portfolio| %>
   <ul>
-    <li><b>Name: </b><%= portfolio.name %></li>
+    <li><b>Name: </b><%= portfolio.name.capitalize %></li>
     <li><b>Description: </b><%= portfolio.description %></li>
     <%= image_tag portfolio.image.url, class: "image-sizes" %>
   </ul>
