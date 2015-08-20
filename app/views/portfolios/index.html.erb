@@ -1,19 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'New Portfolio', new_portfolio_path %>
-<h1>Listing Portfolios</h1>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 text-center">
+        <h1>Take a look at some of my projects</h1>
+        <p>Here are few of my projects I have done from the beginning of my web development times till now.  All these apps were built on Ruby on Rails including this site!  Most of the gems used in these apps consisted of devise and bootstrap-sass.  Some apps used API's for their features.</p>
+    </div>
+</div>
 
 <% @portfolios.each do |portfolio| %>
-  <ul>
-    <li><b>Name: </b><%= portfolio.name.capitalize %></li>
-    <li><b>Description: </b><%= portfolio.description %></li>
-    <%= image_tag portfolio.image.url, class: "image-sizes" %>
-  </ul>
 
-  <%= link_to "Show", portfolio_path(portfolio) %>
-  <%= link_to "Edit", edit_portfolio_path(portfolio) %>
-  <%= link_to "Delete", portfolio, method: :delete, data: { confirm: "Are you sure?" } %>
+<div class="row">
+    <div class="col-md-12 well">
+        <div class="col-md-6">
+            <%= image_tag portfolio.image.url, class: "image-sizes" %>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center"><%= portfolio.name.titleize %></h3>
+            <p><%= portfolio.description %></p>
+        </div>
+        <button class="btn btn-default btn-md"> <%= link_to "Show", portfolio_path(portfolio) %></button>
 
+        <% if current_admin %>
+        <br/>
+        <%= link_to 'New Portfolio', new_portfolio_path %> <br/>
+        <%= link_to "Edit", edit_portfolio_path(portfolio) %>
+        <%= link_to "Delete", portfolio, method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+    </div>
+</div>
 <% end %>
+
+
 
 
