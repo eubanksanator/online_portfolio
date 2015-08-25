@@ -7,18 +7,16 @@
     </div>
 </div>
 
-<% @portfolios.each do |portfolio| %>
+<div class="col-md-12">
 
-<div class="row">
-    <div class="col-md-12 well">
-        <div class="col-md-6">
-            <%= image_tag portfolio.image.url, class: "image-sizes" %>
-        </div>
-        <div class="col-md-6">
-            <h3 class="text-center"><%= portfolio.name.titleize %></h3>
-            <p><%= portfolio.description %></p>
-        </div>
-        <button class="btn btn-default btn-md"> <%= link_to "Show", portfolio_path(portfolio) %></button>
+<% @portfolios.each do |portfolio| %>
+    <div class="col-md-6">
+    <div class="panel panel-default">
+
+        <%= image_tag portfolio.image.url, class: "img-responsive" %>
+        <h3 class="text-center"><%= portfolio.name.titleize %></h3>
+        <p><%= portfolio.description %></p>
+        <button class="btn btn-default btn-md"> <%= link_to "View", portfolio_path(portfolio) %></button>
 
         <% if current_admin %>
         <br/>
@@ -27,8 +25,9 @@
         <%= link_to "Delete", portfolio, method: :delete, data: { confirm: "Are you sure?" } %>
         <% end %>
     </div>
-</div>
+    </div>
 <% end %>
+</div>
 
 
 
