@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :educations
   devise_for :admins
 
   resources :portfolios
