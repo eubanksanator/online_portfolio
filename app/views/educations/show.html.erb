@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+<ul>
+   <li><%= @education.school_name %></li>
+   <li><%= @education.course_program %></li>
+   <li><%= @education.location %></li>
+   <li><%= @education.duration %></li>
+   <li><%= @education.description %></li>
+</ul>
+
 
 <%= link_to 'Edit', edit_education_path(@education) %> |
 <%= link_to 'Back', educations_path %>
+</div>
