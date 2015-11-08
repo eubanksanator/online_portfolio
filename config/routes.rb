@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :educations
   devise_for :admins
 
+  resources :educations
   resources :portfolios
   resources :skills, except: [:show]
+  resources :technologies
   resources :work_experiences
 
   get 'static_pages/home'
-  get 'static_pages/contact'
+  match '/contact', to: 'static_pages#contact', via: 'get'
 
   root to: "static_pages#home"
 

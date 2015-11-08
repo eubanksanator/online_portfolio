@@ -9,24 +9,23 @@
 
 <div class="col-md-12">
 
-<% @portfolios.each do |portfolio| %>
+    <% @portfolios.each do |portfolio| %>
     <div class="col-md-6">
-    <div class="panel panel-default">
+        <div class="panel panel-default" id="port-panel">
+            <%= image_tag portfolio.image.url, class: "img-responsive" %>
+            <h3 class="text-center"><%= portfolio.name.titleize %></h3>
+            <p><%= portfolio.description %></p>
+            <button class="btn btn-default btn-md"> <%= link_to "View", portfolio_path(portfolio) %></button>
 
-        <%= image_tag portfolio.image.url, class: "img-responsive" %>
-        <h3 class="text-center"><%= portfolio.name.titleize %></h3>
-        <p><%= portfolio.description %></p>
-        <button class="btn btn-default btn-md"> <%= link_to "View", portfolio_path(portfolio) %></button>
-
-        <% if current_admin %>
-        <br/>
-        <%= link_to 'New Portfolio', new_portfolio_path %> <br/>
-        <%= link_to "Edit", edit_portfolio_path(portfolio) %>
-        <%= link_to "Delete", portfolio, method: :delete, data: { confirm: "Are you sure?" } %>
-        <% end %>
+            <% if current_admin %>
+            <br/>
+            <%= link_to 'New Portfolio', new_portfolio_path %> <br/>
+            <%= link_to "Edit", edit_portfolio_path(portfolio) %>
+            <%= link_to "Delete", portfolio, method: :delete, data: { confirm: "Are you sure?" } %>
+            <% end %>
+        </div>
     </div>
-    </div>
-<% end %>
+    <% end %>
 </div>
 
 

@@ -1,0 +1,8 @@
+<%= link_to 'Add technology', new_technology_path %>
+<% @techs.each do |tech| %>
+<ul>
+   <li><%= tech.name %></li>
+</ul>
+<% end %>
+
+
