@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'json'
+
 class EducationsController < ApplicationController
   before_action :set_education, only: [:show, :edit, :update, :destroy]
 
@@ -5,6 +8,19 @@ class EducationsController < ApplicationController
   # GET /educations.json
   def index
     @educations = Education.all
+    @icons = ["code", "anchor", "adjust"]
+
+    cs_url = "https://www.codeschool.com/users/1733393.json"
+    open_url = open(cs_url).read
+    json_data = JSON.parse(open_url)
+    @cs_badges = json_data['courses']['completed']
+    @cs_info = json_data['user']
+
+    tth_url = "https://teamtreehouse.com/traviseubanks.json"
+    open_url = open(tth_url).read
+    json_data = JSON.parse(open_url)
+    @tth_badges = json_data['badges']
+    @tth_points = json_data['points']
   end
 
   # GET /educations/1
