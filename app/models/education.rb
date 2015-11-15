@@ -1,11 +1,11 @@
 class Education < ActiveRecord::Base
 
    def set_icon
-      case name
+      case school_name
       when "The Starter League"
          "code"
       when "Elgin Community College"
-         "book-o"
+         "book"
       when "ACE Fitness"
          "bolt"
       end

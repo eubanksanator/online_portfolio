@@ -21,6 +21,7 @@ class EducationsController < ApplicationController
     json_data = JSON.parse(open_url)
     @tth_badges = json_data['badges']
     @tth_points = json_data['points']
+    @tth_courses = @tth_badges[5]
   end
 
   # GET /educations/1

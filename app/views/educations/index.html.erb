@@ -4,38 +4,65 @@
   <%= link_to 'New Education', new_education_path %>
 </div>
 
-<div class="col-md-8">
-  <% @educations.each do |education| %>
-  <div class="well">
-    <h4 class="text-center"><%= fa_icon education.set_icon %><%= education.school_name %></h4>
-    <%= fa_icon "map-marker" %> <span class="orange"><%= education.location%></span><br/>
-    <%= fa_icon "bookmark-o" %> <%= education.course_program %><br/>
-    <%= fa_icon "calendar"%> <%= education.duration %><br/>
-    <%= education.description %>
-  </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-8">
+      <div class="well">
+        <% @educations.each do |education| %>
+        <h4 class="text-center"> <%= education.school_name %></h4>
+        <%= fa_icon "map-marker" %> <span class="orange"><%= education.location%></span><br/>
+        <%= fa_icon "bookmark-o" %> <%= education.course_program %><br/>
+        <%= fa_icon "calendar"%> <%= education.duration %><br/>
+        <%= education.description %>
 
-  <%= link_to 'Show', education %> |
-  <%= link_to 'Edit', edit_education_path(education) %> |
-  <%= link_to 'Delet', education, method: :delete, data: {confirm: 'Are you sure?'} %> |
-  <% end %>
+        <%= link_to 'Show', education %> |
+        <%= link_to 'Edit', edit_education_path(education) %> |
+        <%= link_to 'Delet', education, method: :delete, data: {confirm: 'Are you sure?'} %> |
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <h4><%= fa_icon 'code' %>Codeacademy.com</h4>
+      (Total score: <%= @cs_info['total_score'] %>)
+      <div class="row">
+        <% @cs_badges.each do |badge| %>
+
+        <div class="col-md-6">
+          <%= image_tag badge['badge'], size: '50' %><br/>
+          <%= badge['title'] %>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="col-md-4">
-  <h5>Codeacademy.com Total score: <%= @cs_info['total_score'] %></h5>
-  <% @cs_badges.each do |badge| %>
-  <ul class="no-li-deco">
-    <li><%= image_tag badge['badge'], size: '50' %> <%= badge['title'] %></li>
-  </ul>
+<ul>
+  <% @tth_points.each do |pt| %>
+  <li><%= pt[0] %>: <%= pt[1] %></li>
   <% end %>
+</ul>
+
+<div class="row">
+  <div class="col-md-12">
+    <% @tth_badges.each do |badge| %>
+    <p><%= badge['name'] %></p>
+    <% end %>
+  </div>
 </div>
 
 <div class="row">
   <div class="col-md-12">
-    <h5>TeamTreehouse.com total points earned: <%= @tth_points['total'] %></h5>
-    <ul>
-    <% @tth_points.each do |pt| %>
-      <li><%= pt[0] %>: <%= pt[1] %></li>
-    <% end %>
-    </ul>
+    <%# @tth_badges.each do |badge| %>
+    <p>
+      <%# badge['courses'].each do |course| %>
+      <%# course['title'] %>
+      <%# end %>
+    </p>
+    <%# end %>
   </div>
 </div>
+
+
