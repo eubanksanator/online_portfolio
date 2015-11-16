@@ -17,20 +17,18 @@
   <div class="col-md-10 col-md-offset-1">
     <div class="bordered-jobs">
       <h3><%= job.name %></h3>
-      <small>
-        <%= job.start_date %> -
+      <small class="pull-right">
+        <%= job.start_date.strftime("%B %Y") %> -
 
         <% if job.current_job? %>
         Present
         <% else %>
-        <%= job.end_date %>
+        <%= job.end_date.strftime("%B %Y") %>
         <% end %>
       </small>
 
-      <div class="row">
-        <h5><%= job.job_title %></h5>
+        <h5><i><%= job.job_title %></i></h5>
         <p><%= job.description %></p>
-      </div>
     </div>
   </div>
 </div>
