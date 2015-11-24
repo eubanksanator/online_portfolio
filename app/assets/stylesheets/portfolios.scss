@@ -6,9 +6,7 @@
    border:1px solid gray;
    margin:3px;
 }
-.show-image{
-   border: 1px solid gray;
-}
+
 #port-panel{
    padding:10px;
    /* IE10+ */
@@ -28,4 +26,26 @@ background-image: -webkit-linear-gradient(top, #FFB012 30%, #FFFF00 100%);
 
 /* W3C Markup */
 background-image: linear-gradient(to bottom, #FFB012 30%, #FFFF00 100%);
+}
+
+.image-show{
+   border:1px solid #D0D0D0;
+}
+.heading{
+   background-color:#31364a;
+}
+.heading h4{
+   color: white;
+   padding:12px;
+   margin-bottom: 0;
+}
+.description{
+   background-color: #e1dbc4;
+}
+.description p{
+   color:#847C61;
+   padding:12px;
+}
+.panel{
+   padding: 0;
 }

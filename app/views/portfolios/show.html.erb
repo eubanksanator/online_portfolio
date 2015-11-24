@@ -1,14 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-<%= link_to 'Back', portfolios_path %>
+<div class="col-md-12">
+   <div class="col-md-8">
+      <%= image_tag @portfolio.image.url, class: "img-responsive image-show" %>
+   </div>
+   <div class="col-md-4">
+      <div class="col-md-12 heading">
+         <h4><%= @portfolio.name.titleize %></h4>
+      </div>
+      <div class="col-md-12 description">
+         <p><%= @portfolio.description %></p>
+      </div>
+   </div>
 
-<div class="col-md-10 col-md-offset-1">
-
-<%= image_tag @portfolio.image.url, class: "img-responsive show-image" %>
-<ul>
-    <li><strong>Name:</strong> <%= @portfolio.name.titleize %></li>
-    <li><strong>Description:</strong> <%= @portfolio.description %></li>
-</ul>
+   <div class="row">
+      <div class="col-md-12">
+         <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
+         <%= link_to 'Back', portfolios_path %>
+      </div>
+   </div>
 </div>
-

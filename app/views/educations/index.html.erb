@@ -59,8 +59,8 @@
 
     <% @tth_points.each do |pt| %>
     <div class="col-md-3 pts">
-      <h6><%= (pt[0]).upcase %></h6>
-      <p><%= number_with_delimiter pt[1] %> pts</p>
+      <h6><u><%= (pt[0]).upcase %></u></h6>
+      <p class="orange"><%= number_with_delimiter pt[1] %> pts</p>
     </div>
     <% end %>
   </div>
