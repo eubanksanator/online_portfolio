@@ -12,8 +12,8 @@
     <% @portfolios.each do |portfolio| %>
     <div class="col-md-6">
         <div class="panel panel-default" id="port-panel">
-            <%= image_tag portfolio.image.url, class: "img-responsive" %>
             <h3 class="text-center"><%= portfolio.name.titleize %></h3>
+            <%= image_tag portfolio.image.url, class: "img-responsive" %>
             <p><%= portfolio.description %></p>
             <button class="btn btn-default btn-md"> <%= link_to "View", portfolio_path(portfolio) %></button>
 

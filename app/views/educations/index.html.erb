@@ -7,7 +7,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="col-md-8">
-    <div class="panel panel-default">
+      <div class="panel panel-default">
         <% @educations.each do |education| %>
         <div class="well">
           <h4 class="text-center edu-name"> <%= education.school_name %></h4>
@@ -25,18 +25,9 @@
       </div>
     </div>
     <div class="col-md-4">
-      <div class="panel panel-default">
-        <h4>Random-O's</h4>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-        <ul>
-          <li>Yellow</li>
-          <li>Black</li>
-          <li>Purple</li>
-          <li>Turtle</li>
-          <li>Dinasour</li>
-          <li>House</li>
-          <li>YADA</li>
-        </ul>
+      <div class="panel panel-default facts">
+        <h4>Did you know...</h4>
+        <p>- <%= fact.content %></p><br/>
       </div>
     </div>
   </div>

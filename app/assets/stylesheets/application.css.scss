@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6, a{
 }
 .selfies{
   transition: all .2s ease-in-out;
-  border-radius: 5px;
+  border-radius: 100%;
 }
 .selfies:hover{
   transform: scale(1.1);

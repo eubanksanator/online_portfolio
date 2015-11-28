@@ -6,24 +6,28 @@
    border:1px solid gray;
    margin:3px;
 }
-
 #port-panel{
-   background-color: rgba(8, 161, 234, 0.34);
-/*background-image: linear-gradient(to bottom, #127CFF 30%, #EFEFE3 100%);*/
+   color: #847C61;
+   background-color: #31364a;
+}
+#port-panel h3{
+   color:black;
+}
+#port-panel p{
+   padding:12px;
 }
 
 .image-show{
    border:1px solid #D0D0D0;
 }
+
 .heading{
    background-color:#31364a;
-}
-.heading h4{
    color: white;
    padding:12px;
    margin-bottom: 0;
 }
-.description{
+.description, #port-panel{
    background-color: #e1dbc4;
 }
 .description p{

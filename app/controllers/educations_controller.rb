@@ -7,6 +7,9 @@ class EducationsController < ApplicationController
   # GET /educations
   # GET /educations.json
   def index
+    @facts = Fact.all.sample(6)
+
+
     @educations = Education.all
     @icons = ["code", "anchor", "adjust"]
 
