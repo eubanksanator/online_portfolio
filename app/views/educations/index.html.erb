@@ -27,7 +27,9 @@
     <div class="col-md-4">
       <div class="panel panel-default facts">
         <h4>Did you know...</h4>
+        <% @facts.each do |fact| %>
         <p>- <%= fact.content %></p><br/>
+        <% end %>
       </div>
     </div>
   </div>
