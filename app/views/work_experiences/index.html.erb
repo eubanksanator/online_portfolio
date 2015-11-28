@@ -3,10 +3,11 @@
 <% if admin_signed_in? %>
 <%= link_to 'New Work experience', new_work_experience_path %>
 <% end %>
-
+<!-- Adjust breifing into multiple sentences!!!!!!!!!!!!! -->
 <div class="row">
   <div class="col-md-12 text-center">
-    <h1>Listing Work Experiences</h1>
+    <h1>A brief history of my work experiences</h1>
+    <p>I'm a super curious individual and I have been grateful to take something from every experience I've had with the various work settings from <b><em>communication</em></b> skills and <b><em>team work</em></b> to <b><em>motivating</em></b>, setting and then <b><em>implementing goals</em></b> all the way to <b><em>marketing</em></b> and <b><em>selling</em></b> products and services.  Now building cool technology with real <b><em>solutions</em></b> for real problems!</p>
     <hr>
   </div>
 </div>
@@ -16,7 +17,7 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <div class="bordered-jobs">
-      <h3><%= job.name %></h3>
+      <h3 class="job-name"><%= job.name %></h3>
       <small class="pull-right">
         <%= job.start_date.strftime("%B %Y") %> -
 
@@ -27,18 +28,18 @@
         <% end %>
       </small>
 
-        <h5><i><%= job.job_title %></i></h5>
-        <p><%= job.description %></p>
+      <h5 class="job-title"><i><%= job.job_title %></i></h5>
+      <p class="job-desc"><%= job.description %></p>
     </div>
   </div>
 </div>
-<hr>
 
 <% if admin_signed_in? %>
-  <%= link_to 'Show', work_experience_path(job) %> |
-  <%= link_to 'Edit', edit_work_experience_path(job) %> |
-  <%= link_to 'Destroy', work_experience_path(job), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Show', work_experience_path(job) %> |
+<%= link_to 'Edit', edit_work_experience_path(job) %> |
+<%= link_to 'Destroy', work_experience_path(job), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+<hr>
 
 <% end %>
 

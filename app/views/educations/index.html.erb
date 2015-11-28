@@ -10,10 +10,11 @@
     <div class="panel panel-default">
         <% @educations.each do |education| %>
         <div class="well">
-          <h4 class="text-center"> <%= education.school_name %></h4>
-          <%= fa_icon "map-marker" %> <span class="orange"><%= education.location%></span><br/>
-          <%= fa_icon "bookmark-o" %> <%= education.course_program %><br/>
+          <h4 class="text-center edu-name"> <%= education.school_name %></h4>
+          <%= fa_icon "map-marker" %> <%= education.location%><br/>
+          <%= fa_icon "bookmark-o" %> <span class="edu-basics"><%= education.course_program %></span><br/>
           <%= fa_icon "calendar"%> <%= education.duration %><br/>
+          <hr>
           <%= education.description %>
 
           <%= link_to 'Show', education %> |
@@ -21,6 +22,21 @@
           <%= link_to 'Delet', education, method: :delete, data: {confirm: 'Are you sure?'} %> |
         </div>
         <% end %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <h4>Random-O's</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        <ul>
+          <li>Yellow</li>
+          <li>Black</li>
+          <li>Purple</li>
+          <li>Turtle</li>
+          <li>Dinasour</li>
+          <li>House</li>
+          <li>YADA</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -58,9 +74,9 @@
     <hr>
 
     <% @tth_points.each do |pt| %>
-    <div class="col-md-3 pts">
+    <div class="col-md-3 name-pts">
       <h6><u><%= (pt[0]).upcase %></u></h6>
-      <p class="orange"><%= number_with_delimiter pt[1] %> pts</p>
+      <p class="pts"><%= number_with_delimiter pt[1] %> pts</p>
     </div>
     <% end %>
   </div>
