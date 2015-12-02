@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.0'
 
 gem "paperclip", "~> 4.3"
 # Front-end
