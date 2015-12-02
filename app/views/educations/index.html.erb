@@ -1,28 +1,24 @@
 <p id="notice"><%= notice %></p>
-<div class="row">
-  <h1>Listing Educations</h1>
-  <%= link_to 'New Education', new_education_path %>
-</div>
+
 
 <div class="row">
   <div class="col-md-12">
+    <h1 class="edu-title">Education</h1>
     <div class="col-md-8">
-      <div class="panel panel-default">
-        <% @educations.each do |education| %>
-        <div class="well">
-          <h4 class="text-center edu-name"> <%= education.school_name %></h4>
-          <%= fa_icon "map-marker" %> <%= education.location%><br/>
-          <%= fa_icon "bookmark-o" %> <span class="edu-basics"><%= education.course_program %></span><br/>
-          <%= fa_icon "calendar"%> <%= education.duration %><br/>
-          <hr>
-          <%= education.description %>
+      <% @educations.each do |education| %>
+      <div class="well">
+        <h4 class="text-center edu-name"> <%= education.school_name %></h4>
+        <%= fa_icon "map-marker" %> <%= education.location%><br/>
+        <%= fa_icon "bookmark-o" %> <span class="edu-basics"><%= education.course_program %></span><br/>
+        <%= fa_icon "calendar"%> <%= education.duration %><br/>
+        <hr>
+        <%= education.description %>
 
-          <%= link_to 'Show', education %> |
-          <%= link_to 'Edit', edit_education_path(education) %> |
-          <%= link_to 'Delet', education, method: :delete, data: {confirm: 'Are you sure?'} %> |
-        </div>
-        <% end %>
+        <%= link_to 'Show', education %> |
+        <%= link_to 'Edit', edit_education_path(education) %> |
+        <%= link_to 'Delet', education, method: :delete, data: {confirm: 'Are you sure?'} %> |
       </div>
+      <% end %>
     </div>
     <div class="col-md-4">
       <div class="panel panel-default facts">
