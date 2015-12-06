@@ -4,43 +4,40 @@
 <%= link_to 'New Work experience', new_work_experience_path %>
 <% end %>
 <!-- Adjust breifing into multiple sentences!!!!!!!!!!!!! -->
-<div class="row">
-  <div class="col-md-12 text-center">
-    <h1>A brief history of my work experiences</h1>
-    <p>I'm a super curious individual and I have been grateful to be able to take something from every experience.  Having been in various work settings it's been awesome to bring on and enhance my abilities from <b><em>communication</em></b> skills and <b><em>team work</em></b> to <b><em>motivating</em></b>, setting, and then <b><em>implementing goals</em></b> all the way to <b><em>marketing</em></b> and <b><em>selling</em></b> products and services.  Now I'm in persuit of building super cool <b><em>solutions</em></b> through technology that solve real problems!</p>
-    <hr>
-  </div>
+<div class="col-md-12 text-center">
+  <h1>A brief history of my work experiences</h1>
+  <p>I'm a super curious individual and I have been grateful to be able to take something from every experience.  Having been in various work settings it's been awesome to bring on and enhance my abilities from <b><em>communication</em></b> skills and <b><em>team work</em></b> to <b><em>motivating</em></b>, setting, and then <b><em>implementing goals</em></b> all the way to <b><em>marketing</em></b> and <b><em>selling</em></b> products and services.  Now I'm in persuit of building super cool <b><em>solutions</em></b> through technology that solve real problems!</p>
+  <hr>
 </div>
 
-<% @work_experiences.each do |job| %>
 
-<div class="row">
-  <div class="col-md-10 col-md-offset-1">
-    <div class="bordered-jobs">
+<div class="col-md-12">
+  <div class="col-md-8">
+    <% @work_experiences.each do |job| %>
+    <div class="row">
       <h3 class="job-name"><%= job.name %></h3>
-      <small class="pull-right">
+      <h5 class="job-title"><i><%= job.job_title %></i></h5>
+      <small>
         <%= job.start_date.strftime("%B %Y") %> -
-
         <% if job.current_job? %>
         Present
         <% else %>
         <%= job.end_date.strftime("%B %Y") %>
         <% end %>
       </small>
-
-      <h5 class="job-title"><i><%= job.job_title %></i></h5>
       <p class="job-desc"><%= job.description %></p>
     </div>
+    <hr>
+    <% end %>
+  </div>
+
+  <div class="col-md-4">
+    <% @skills.each do |skill| %>
+    <div class="skills">
+      <%= fa_icon "thumbs-o-up", class: "icon-skill" %>
+      <%= skill.name %>.
+    </div>
+    <% end %>
   </div>
 </div>
-
-<% if admin_signed_in? %>
-<%= link_to 'Show', work_experience_path(job) %> |
-<%= link_to 'Edit', edit_work_experience_path(job) %> |
-<%= link_to 'Destroy', work_experience_path(job), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-<hr>
-
-<% end %>
-
 

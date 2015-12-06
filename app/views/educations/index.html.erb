@@ -13,10 +13,11 @@
         <%= fa_icon "calendar"%> <%= education.duration %><br/>
         <hr>
         <%= education.description %>
-
-        <%= link_to 'Show', education %> |
-        <%= link_to 'Edit', edit_education_path(education) %> |
-        <%= link_to 'Delet', education, method: :delete, data: {confirm: 'Are you sure?'} %> |
+        <% if admin_signed_in? %>
+          <%= link_to 'Show', education %> |
+          <%= link_to 'Edit', edit_education_path(education) %> |
+          <%= link_to 'Delet', education, method: :delete, data: {confirm: 'Are you sure?'} %> |
+        <% end %>
       </div>
       <% end %>
     </div>

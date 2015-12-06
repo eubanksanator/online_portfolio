@@ -1,5 +1,6 @@
 class TechnologiesController < ApplicationController
    before_action :set_technology, only: [:show, :edit, :update, :destroy]
+   before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy]
 
    def index
       @techs = Technology.all

@@ -3,6 +3,7 @@ require 'json'
 
 class EducationsController < ApplicationController
   before_action :set_education, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy]
 
   # GET /educations
   # GET /educations.json

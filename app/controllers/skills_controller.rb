@@ -1,5 +1,6 @@
 class SkillsController < ApplicationController
   before_action :find_skill, only: [:edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
     @skills = Skill.all

@@ -7,15 +7,13 @@
     </div>
 </div>
 
-<div class="col-md-12">
-
+<div class="col-md-10">
     <% @portfolios.each do |portfolio| %>
     <div class="col-md-6">
         <div class="panel panel-default" id="port-panel">
             <h3 class="text-center"><%= portfolio.name.titleize %></h3>
             <%= image_tag portfolio.image.url, class: "img-responsive" %>
             <p><%= portfolio.description %></p>
-            <button class="btn btn-default btn-md"> <%= link_to "View", portfolio_path(portfolio) %></button>
 
             <% if current_admin %>
             <br/>
@@ -25,6 +23,15 @@
             <% end %>
         </div>
     </div>
+    <% end %>
+</div>
+
+<div class="col-md-2">
+    <h3>Experience in... </h3>
+    <% @technologies.each do |tech| %>
+    <ul>
+        <li><%= tech.name %></li>
+    </ul>
     <% end %>
 </div>
 

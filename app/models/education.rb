@@ -1,5 +1,6 @@
 class Education < ActiveRecord::Base
 
+
    def set_icon
       case school_name
       when "The Starter League"
