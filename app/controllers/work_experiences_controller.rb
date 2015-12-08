@@ -30,7 +30,7 @@ class WorkExperiencesController < ApplicationController
 
     respond_to do |format|
       if @work_experience.save
-        format.html { redirect_to @work_experience, notice: 'Work experience was successfully created.' }
+        format.html { redirect_to work_experiences_path, notice: 'Work experience was successfully created.' }
         format.json { render :show, status: :created, location: @work_experience }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class WorkExperiencesController < ApplicationController
   def update
     respond_to do |format|
       if @work_experience.update(work_experience_params)
-        format.html { redirect_to @work_experience, notice: 'Work experience was successfully updated.' }
+        format.html { redirect_to work_experiences_path, notice: 'Work experience was successfully updated.' }
         format.json { render :show, status: :ok, location: @work_experience }
       else
         format.html { render :edit }
