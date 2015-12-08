@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :work_experiences, except: [:show]
 
   get 'static_pages/home'
-  get ''
   match '/contact', to: 'static_pages#contact', via: 'get'
 
   root to: "static_pages#home"
