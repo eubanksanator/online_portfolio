@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 
 <div class="row">
@@ -14,20 +13,29 @@
         <hr>
         <%= education.description %>
         <% if admin_signed_in? %>
-          <%= link_to 'Show', education %> |
-          <%= link_to 'Edit', edit_education_path(education) %> |
-          <%= link_to 'Delet', education, method: :delete, data: {confirm: 'Are you sure?'} %> |
+        <%= link_to 'Show', education %> |
+        <%= link_to 'Edit', edit_education_path(education) %> |
+        <%= link_to 'Delet', education, method: :delete, data: {confirm: 'Are you sure?'} %> |
         <% end %>
       </div>
       <% end %>
     </div>
-    <div class="col-md-4">
-      <div class="panel panel-default facts">
-        <h4>Did you know...</h4>
-        <% @facts.each do |fact| %>
-        <p>- <%= fact.content %></p><br/>
-        <% end %>
+
+    <div class="col-md-4 panel panel-default tth-panel">
+      <div class="col-md-12 tth-panel-heading">
+        <h4><%= fa_icon 'share-alt' %> TeamTreeHouse</h4>
+        <%= link_to "TeamTreeHouse.com", "https://www.teamtreehouse.com" %>
       </div>
+
+      <% @tth_points.each do |pt| %>
+      <div class="col-md-6 panel-body">
+        <!-- <div class="col-md-3 name-pts"> -->
+        <h6><u><%= (pt[0]).upcase %></u></h6>
+        <p class="pts"><%= number_with_delimiter pt[1] %> pts</p>
+        <!-- </div> -->
+      </div>
+      <% end %>
+
     </div>
   </div>
 </div>
@@ -51,48 +59,3 @@
     <% end %>
   </div>
 </div>
-
-<div class="spacer"></div>
-
-<div class="row edu-border">
-  <div class="col-md-12">
-    <div class="row">
-      <h3><%= fa_icon 'share-alt' %> TeamTreeHouse</h3>
-      <%= link_to "TeamTreeHouse.com", "https://www.teamtreehouse.com" %>
-      <div class="pull-right">(Total score: <%= number_with_delimiter @tth_points.first[1] %>)</div>
-    </div>
-    <hr>
-
-    <% @tth_points.each do |pt| %>
-    <div class="col-md-3 name-pts">
-      <h6><u><%= (pt[0]).upcase %></u></h6>
-      <p class="pts"><%= number_with_delimiter pt[1] %> pts</p>
-    </div>
-    <% end %>
-  </div>
-</div>
-
-
-<!--
-
-<div class="row">
-  <div class="col-md-12">
-    <%# @tth_badges.each do |badge| %>
-    <p><%# badge['name'] %></p>
-    <%# end %>
-  </div>
-</div> -->
-<!--
-<div class="row">
-  <div class="col-md-12">
-    <%# @tth_badges.each do |badge| %>
-    <p>
-      <%# badge['courses'].each do |course| %>
-      <%# course['title'] %>
-      <%# end %>
-    </p>
-    <%# end %>
-  </div>
-</div> -->
-
-

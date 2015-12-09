@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<% if admin_signed_in? %>
+    <%= link_to "Add project", new_portfolio_path %>
+<% end %>
 <div class="row">
     <div class="col-md-8 col-md-offset-2 text-center">
         <h1>Take a look at some of my projects!</h1>
