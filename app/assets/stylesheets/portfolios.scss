@@ -6,17 +6,16 @@
    border:1px solid gray;
    margin:3px;
 }
-#port-panel{
-   color: #847C61;
-   background-color: #31364a;
-}
+
 #port-panel h3{
    color:black;
 }
 #port-panel p{
    padding:12px;
 }
-
+#port-panel{
+   box-shadow: -1px 3px 5px gray;
+}
 .image-show{
    border:1px solid #D0D0D0;
 }
@@ -27,13 +26,13 @@
    padding:12px;
    margin-bottom: 0;
 }
-.description, #port-panel{
-   background-color: #e1dbc4;
-}
 .description p{
    color:#847C61;
    padding:12px;
 }
 .panel{
    padding: 0;
+}
+.project{
+   box-shadow:0 1px 1px rgba(0,0,0,0.3);
 }

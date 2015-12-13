@@ -1,24 +1,23 @@
-/*// Place all the styles related to the Educations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$panel: aliceblue;
 
-*/
+
+.edu-title{
+  margin-left:13px;
+  font-family: 'Damion', cursive;
+  font-size: 80px;
+  text-align: center;
+  padding-bottom: 30px;
+}
 
 .the-starter-league:before{
-   content: "/f083";
-   font-family: FontAwesome;
+ content: "/f083";
+ font-family: FontAwesome;
 }
 .online-school-head{
-   text-align: center;
+ text-align: center;
 }
-/*.edu-border{
-   border:1px solid #F7EBEB;
-   padding: 25px;
-   margin-bottom: 20px;
-}*/
-
 .name-pts{
-   font-weight: bold;
+ font-weight: bold;
 }
 
 .pts{
@@ -27,22 +26,22 @@
 }
 
 .panel{
-   padding:15px;
+ padding:15px;
 }
-.edu-name{
-   background-color: white;
-   padding:8px;
+.blue-panel{
+  background-color: $panel;
 }
-.even{
-  color:yellow;
+.cs-panel{
+  padding:15px;
+  margin-bottom: 10px;
 }
-.tth-panel{
-  background-color: aliceblue;
-}
-.tth-panel-heading{
+.white-heading{
   background-color: white;
   padding: 8px;
+  margin-bottom: 10px;
+  box-shadow: 1px 2px 5px gray;
 }
-.edu-title{
-  margin-left:13px;
+.badge-card{
+  background-color: $panel;
+  margin:2.5px 0;
 }

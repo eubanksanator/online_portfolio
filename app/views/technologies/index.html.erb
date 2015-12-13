@@ -1,4 +1,6 @@
+<% if admin_signed_in? %>
 <%= link_to 'Add technology', new_technology_path %>
+<% end %>
 <% @techs.each do |tech| %>
 <ul>
    <li><%= tech.name %></li>

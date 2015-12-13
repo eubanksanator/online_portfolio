@@ -6,7 +6,7 @@
     <div class="col-md-8">
       <% @educations.each do |education| %>
       <div class="well">
-        <h4 class="text-center edu-name"> <%= education.school_name %></h4>
+        <h4 class="text-center white-heading"> <%= education.school_name %></h4>
         <%= fa_icon "map-marker" %> <%= education.location%><br/>
         <%= fa_icon "bookmark-o" %> <span class="edu-basics"><%= education.course_program %></span><br/>
         <%= fa_icon "calendar"%> <%= education.duration %><br/>
@@ -21,8 +21,8 @@
       <% end %>
     </div>
 
-    <div class="col-md-4 panel panel-default tth-panel">
-      <div class="col-md-12 tth-panel-heading">
+    <div class="col-md-4 panel panel-default blue-panel">
+      <div class="col-md-12 white-heading">
         <h4><%= fa_icon 'share-alt' %> TeamTreeHouse</h4>
         <%= link_to "TeamTreeHouse.com", "https://www.teamtreehouse.com" %>
       </div>
@@ -42,20 +42,24 @@
 
 <div class="spacer"></div>
 
-<div class="row edu-border">
-  <div class="col-md-12">
-    <div class="row">
+<div class="row">
+  <div class="blue-panel cs-panel">
+    <div class="col-md-12 white-heading">
       <h3><%= fa_icon 'code' %> CodeSchool</h3>
       <%= link_to "CodeSchool.com", "https://www.codeschool.com", class:'pull-left' %>
       <div class="pull-right">(Total score: <%= number_with_delimiter @cs_info['total_score'] %>)</div>
     </div>
     <hr>
 
-    <% @cs_badges.each do |badge| %>
-    <div class="col-md-3">
-      <%= image_tag badge['badge'], size: '35' %><br/>
-      <%= badge['title'] %>
+    <div class="row">
+      <div class="col-md-12">
+        <% @cs_badges.each do |badge| %>
+        <div class="col-md-3">
+          <%= image_tag badge['badge'], size: '35' %><br/>
+          <%= badge['title'] %>
+        </div>
+        <% end %>
+      </div>
     </div>
-    <% end %>
   </div>
 </div>

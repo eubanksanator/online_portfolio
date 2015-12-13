@@ -2,18 +2,19 @@
 <% if admin_signed_in? %>
 <%= link_to 'New Work experience', new_work_experience_path %>
 <% end %>
-<!-- Adjust breifing into multiple sentences!!!!!!!!!!!!! -->
-<div class="col-md-12 text-center">
-  <h1>A brief history of my work experiences</h1>
-  <p>I'm a super curious individual and I have been grateful to be able to take something from every experience.  Having been in various work settings it's been awesome to bring on and enhance my abilities from <b><em>communication</em></b> skills and <b><em>team work</em></b> to <b><em>motivating</em></b>, setting, and then <b><em>implementing goals</em></b> all the way to <b><em>marketing</em></b> and <b><em>selling</em></b> products and services.  Now I'm in persuit of building super cool <b><em>solutions</em></b> through technology that solve real problems!</p>
-  <hr>
+<div class="row bg">
+  <div class="col-md-12 bg-img">
+    <div class="col-md-8 col-md-offset-2 text-center bg-content">
+      <h1>A brief history of my work experiences</h1>
+      <p>I'm a super curious individual and I have been grateful to be able to take something from every experience.  Having been in various work settings it's been awesome to bring on and enhance my abilities from <b><em>communication</em></b> skills and <b><em>team work</em></b> to <b><em>motivating</em></b>, setting, and then <b><em>implementing goals</em></b> all the way to <b><em>marketing</em></b> and <b><em>selling</em></b> products and services.  Now I'm in persuit of building super cool <b><em>solutions</em></b> through technology that solve real problems!</p>
+    </div>
+  </div>
 </div>
 
-
-<div class="col-md-12">
-  <div class="col-md-8">
+<div class="row">
+  <div class="col-md-12">
     <% @work_experiences.each do |job| %>
-    <div class="row">
+    <div class="row work">
       <h3 class="job-name"><%= job.name %></h3>
       <h5 class="job-title"><i><%= job.job_title %></i></h5>
       <small>
@@ -26,18 +27,6 @@
       </small>
       <p class="job-desc"><%= job.description %></p>
     </div>
-    <hr>
-    <% end %>
-  </div>
-
-  <div class="col-md-4">
-    <% @skills.each do |skill| %>
-    <div class="skills">
-    <!-- <li> with no list style but instead icon in replace -->
-      <%= fa_icon "thumbs-o-up", class: "icon-skill" %>
-      <%= skill.name %>
-    </div>
     <% end %>
   </div>
 </div>
-

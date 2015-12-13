@@ -11,9 +11,9 @@
 <div class="col-md-10">
     <% @portfolios.each do |portfolio| %>
     <div class="col-md-6">
-        <div class="panel panel-default" id="port-panel">
+        <div class="panel panel-default well" id="port-panel">
             <h3 class="text-center"><%= portfolio.name.titleize %></h3>
-            <%= image_tag portfolio.image.url, class: "img-responsive" %>
+            <%= image_tag portfolio.image.url, class: "img-responsive project" %>
             <p><%= portfolio.description %></p>
 
             <% if current_admin %>
