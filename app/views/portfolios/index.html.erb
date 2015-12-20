@@ -3,7 +3,7 @@
 <% end %>
 <div class="row">
     <div class="col-md-8 col-md-offset-2 text-center">
-        <h1>Take a look at some of my projects!</h1>
+        <h1 class="cursive">Take a look at some of my projects!</h1>
         <p>Here are few of my projects I have done from the beginning of my web development times till now.  All APPS were built on Ruby on Rails including this site!  Most of the gems used in these apps consisted of devise and bootstrap-sass.  Some apps used API's for their features. The company websites listed below were all html, CSS, JS built with no frameworks in place.</p>
     </div>
 </div>
@@ -31,11 +31,11 @@
     <% end %>
 </div>
 
-<div class="col-md-2">
-    <h3>Experience in... </h3>
+<div class="col-md-2 experience">
+    <h3 class="text-center cursive"><u>Technology</u></h3>
     <% @technologies.each do |tech| %>
     <ul>
-        <li><%= tech.name %></li>
+        <li><b><%= tech.name %></b></li>
     </ul>
     <% end %>
 </div>
