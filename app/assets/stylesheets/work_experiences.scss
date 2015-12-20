@@ -12,26 +12,44 @@ $brownWords: rgb(187, 118, 85);
 }
 .work{
    padding: 15px;
-   background-color: rgba(239, 239, 239, 0.18);
    margin-bottom: 20px;
    box-shadow: 0px 1px 5px;
 }
 .bg-img{
-   background-image: url(canyon.jpg);
+  /* background-image: url(canyon.jpg);
    background-size: cover;
    width: 100%;
-   height: 375px;
+   height: 375px;*/
+   width: 150px;
+   height: 100px;
+   margin-left: 10px;
+   -webkit-transform: skew(20deg);
+   -moz-transform: skew(20deg);
+   -o-transform: skew(20deg);
+   background: red;
+   color:white;
+   font-size: 25px;
+   padding: 4px;
 }
+.bg-img > h4{
+   color:white;
+   font-size: 32px;
+}
+
 .bg-content{
    color: white;
    margin-top: 30px;
    background-color: rgba(255, 255, 255, .28);
 }
 .bg{
-   margin-bottom: 50px;
-   margin-bottom:40px;
+   padding-bottom:85px;
 }
 .navbar{
    border:none;
    margin-bottom: 0;
+}
+.tan-bg{
+  background-color: rgb(255, 253, 247);
+  margin-bottom: 25px;
+  padding:10px;
 }

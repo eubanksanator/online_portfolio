@@ -1,5 +1,5 @@
 <% if admin_signed_in? %>
-    <%= link_to "Add project", new_portfolio_path %>
+<%= link_to "Add project", new_portfolio_path %>
 <% end %>
 <div class="row">
     <div class="col-md-8 col-md-offset-2 text-center">
@@ -8,20 +8,24 @@
     </div>
 </div>
 
+<hr>
 <div class="col-md-10">
     <% @portfolios.each do |portfolio| %>
-    <div class="col-md-6">
-        <div class="panel panel-default well" id="port-panel">
-            <h3 class="text-center"><%= portfolio.name.titleize %></h3>
-            <%= image_tag portfolio.image.url, class: "img-responsive project" %>
-            <p><%= portfolio.description %></p>
-
-            <% if current_admin %>
-            <br/>
-            <%= link_to 'New Portfolio', new_portfolio_path %> <br/>
-            <%= link_to "Edit", edit_portfolio_path(portfolio) %> <br/>
-            <%= link_to "Delete", portfolio, method: :delete, data: { confirm: "Are you sure?" } %>
-            <% end %>
+    <div class="col-md-12 card">
+        <div class="col-md-12">
+            <h3><%= portfolio.name.titleize %></h3>
+            <div class="col-md-6">
+                <%= image_tag portfolio.image.url, class: "img-responsive project" %>
+            </div>
+            <div class="col-md-6" id="port-desc">
+                <p><%= portfolio.description %></p>
+                <% if current_admin %>
+                <br/>
+                <%= link_to 'New Portfolio', new_portfolio_path %> <br/>
+                <%= link_to "Edit", edit_portfolio_path(portfolio) %> <br/>
+                <%= link_to "Delete", portfolio, method: :delete, data: { confirm: "Are you sure?" } %>
+                <% end %>
+            </div>
         </div>
     </div>
     <% end %>

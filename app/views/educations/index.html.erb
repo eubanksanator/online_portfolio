@@ -10,8 +10,7 @@
         <%= fa_icon "map-marker" %> <%= education.location%><br/>
         <%= fa_icon "bookmark-o" %> <span class="edu-basics"><%= education.course_program %></span><br/>
         <%= fa_icon "calendar"%> <%= education.duration %><br/>
-        <hr>
-        <%= education.description %>
+        <p class="edu-desc"><%= education.description %></p>
         <% if admin_signed_in? %>
         <%= link_to 'Show', education %> |
         <%= link_to 'Edit', edit_education_path(education) %> |

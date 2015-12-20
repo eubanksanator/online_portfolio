@@ -8,6 +8,7 @@
 
 $navBlue: #1B89DB;
 
+
 body{
  font-family: 'Merriweather', serif;
  font-size: 17px;
@@ -51,4 +52,6 @@ h1, h2, h3, h4, h5, h6, a{
 .selfies:hover{
   transform: scale(1.1);
 }
-
+.navbar-default{
+  max-height: 50px;
+}
