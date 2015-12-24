@@ -15,7 +15,7 @@
         <div class="col-md-12">
             <h3><%= portfolio.name.titleize %></h3>
             <div class="col-md-6">
-                <%= image_tag portfolio.image.url, class: "img-responsive project" %>
+                <%= image_tag portfolio.image.url, class: "img-responsive project", alt: "Project image from #{portfolio.name}" %>
             </div>
             <div class="col-md-6" id="port-desc">
                 <p><%= portfolio.description %></p>
