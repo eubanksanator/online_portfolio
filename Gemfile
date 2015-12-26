@@ -2,15 +2,11 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 gem "paperclip", "~> 4.3"
-# Front-end
 gem 'bootstrap-sass', '~> 3.3.5.1'
-# Form handling
 gem 'simple_form', '~> 3.1.0'
-gem 'aws-sdk'
-
 gem 'devise'
 gem "font-awesome-rails"
-
+gem 'aws-sdk', '~> 2.2', '>= 2.2.8'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
