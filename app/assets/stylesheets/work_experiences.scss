@@ -61,3 +61,10 @@
 .cursive{
   font-family: 'Damion', cursive;
 }
+.p-card{
+  transition: all .2s ease-in-out;
+}
+.p-card:hover{
+  transform: scale(1.1);
+  background-color: #F9F4E6;
+}
