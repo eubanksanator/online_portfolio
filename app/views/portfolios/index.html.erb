@@ -1,6 +1,7 @@
 <% if admin_signed_in? %>
 <%= link_to "Add project", new_portfolio_path %>
 <% end %>
+
 <div class="row">
     <div class="col-md-8 col-md-offset-2 text-center">
         <h1 class="cursive">Take a look at some of my projects!</h1>
@@ -20,8 +21,6 @@
             <div class="col-md-6" id="port-desc">
                 <p><%= portfolio.description %></p>
                 <% if current_admin %>
-                <br/>
-                <%= link_to 'New Portfolio', new_portfolio_path %> <br/>
                 <%= link_to "Edit", edit_portfolio_path(portfolio) %> <br/>
                 <%= link_to "Delete", portfolio, method: :delete, data: { confirm: "Are you sure?" } %>
                 <% end %>
