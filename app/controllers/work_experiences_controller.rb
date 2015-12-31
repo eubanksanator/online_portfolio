@@ -6,7 +6,6 @@ class WorkExperiencesController < ApplicationController
   # GET /work_experiences.json
   def index
     @work_experiences = WorkExperience.all
-    @skills = Skill.all
   end
 
   # GET /work_experiences/1
@@ -71,6 +70,6 @@ class WorkExperiencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def work_experience_params
-      params.require(:work_experience).permit(:name, :start_date, :end_date, :job_title, :description)
+      params.require(:work_experience).permit(:name, :start_date, :current_job, :end_date, :job_title, :description)
     end
-end
+  end

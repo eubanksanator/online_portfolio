@@ -8,11 +8,8 @@ class EducationsController < ApplicationController
   # GET /educations
   # GET /educations.json
   def index
-    @facts = Fact.all.sample(6)
-
-
-    @educations = Education.all
     @icons = ["code", "anchor", "adjust"]
+    @educations = Education.all
 
     cs_url = "https://www.codeschool.com/users/1733393.json"
     open_url = open(cs_url).read
