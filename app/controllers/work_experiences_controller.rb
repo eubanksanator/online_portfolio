@@ -6,7 +6,7 @@ class WorkExperiencesController < ApplicationController
   # GET /work_experiences.json
   def index
     @work_experiences = WorkExperience.all
-    @work_experiences.order(current_job: :desc)
+    @work_experiences = @work_experiences.order(current_job: :desc)
   end
 
   # GET /work_experiences/1
