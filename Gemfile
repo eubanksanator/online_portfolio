@@ -7,6 +7,7 @@ gem 'simple_form', '~> 3.1.0'
 gem 'devise'
 gem "font-awesome-rails"
 gem 'aws-sdk', '< 2.0'
+gem 'whenever', :require => false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
