@@ -20,9 +20,9 @@
   <div class="col-md-12">
     <% @work_experiences.each do |job| %>
     <div class="row tan-bg p-card">
-    <%= if admin_signed_in?%>
+    <% if admin_signed_in?%>
     <%= link_to "edit", edit_work_experience_path(job) %>
-    <%= end %>
+    <% end %>
       <h3 class="job-name"><%= job.name %></h3>
       <h5 class="job-title"><i><%= job.job_title %></i></h5>
       <small>
